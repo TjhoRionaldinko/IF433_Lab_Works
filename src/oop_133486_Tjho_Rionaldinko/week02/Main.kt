@@ -6,26 +6,65 @@ fun main() {
 
     val scanner = Scanner(System.`in`)
 
-    println("=== LIBRARY FINE SYSTEM ===")
+    println("=== MINI RPG BATTLE ===")
 
-    print("Masukkan Judul Buku: ")
-    val title = scanner.nextLine()
+    print("Masukkan Nama Hero: ")
+    val heroName = scanner.nextLine()
 
-    print("Masukkan Nama Peminjam: ")
-    val borrower = scanner.nextLine()
+    print("Masukkan Base Damage Hero: ")
+    val damage = scanner.nextInt()
 
-    print("Masukkan Lama Pinjam (hari): ")
-    var duration = scanner.nextInt()
+    val hero = Hero(heroName, damage)
 
-    if (duration < 0) {
-        duration = 1
+    var enemyHp = 100
+
+    println("\nPertarungan dimulai! Musuh memiliki HP $enemyHp\n")
+
+    while (hero.isAlive() && enemyHp > 0) {
+
+        println("Menu:")
+        println("1. Serang")
+        println("2. Kabur")
+        print("Pilih aksi: ")
+
+        val choice = scanner.nextInt()
+
+        when (choice) {
+
+            1 -> {
+                hero.attack("Musuh")
+
+                enemyHp -= hero.baseDamage
+                if (enemyHp < 0) enemyHp = 0
+
+                println("HP Musuh tersisa: $enemyHp")
+
+                // Jika musuh masih hidup, dia membalas
+                if (enemyHp > 0) {
+                    val enemyDamage = (10..20).random()
+                    println("Musuh menyerang balik sebesar $enemyDamage damage!")
+                    hero.takeDamage(enemyDamage)
+                    println("HP Hero tersisa: ${hero.hp}")
+                }
+            }
+
+            2 -> {
+                println("${hero.name} memilih kabur!")
+                break
+            }
+
+            else -> println("Pilihan tidak valid!")
+        }
+
+        println()
     }
 
-    val loan = Loan(title, borrower, duration)
-
-    println("\n=== DETAIL PEMINJAMAN ===")
-    println("Judul Buku  : ${loan.bookTitle}")
-    println("Peminjam    : ${loan.borrower}")
-    println("Durasi      : ${loan.loanDuration} hari")
-    println("Total Denda : Rp ${loan.calculateFine()}")
+    println("\n=== HASIL PERTARUNGAN ===")
+    if (hero.hp > enemyHp) {
+        println("${hero.name} MENANG!")
+    } else if (enemyHp > hero.hp) {
+        println("Musuh MENANG!")
+    } else {
+        println("Seri!")
+    }
 }
