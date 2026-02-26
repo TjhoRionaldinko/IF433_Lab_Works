@@ -10,4 +10,5 @@ fun main() {
     e.increasePerformance()
 
     println("Pajak yang harus dibayar: ${e.tax}")
+    // coment codenya sudah di hapus dari awal jadi saya selesaikan checkpoint 6 menggunakkan komentar
 }
