@@ -1,7 +1,5 @@
 package oop_133486_Tjho_Rionaldinko.week07
 
-import javax.xml.crypto.Data
-
 fun main(){
 //    println("=== TEST SINGLETON ===")
 //    println("Status: ${DatabaseManager.connectionStatus}")
