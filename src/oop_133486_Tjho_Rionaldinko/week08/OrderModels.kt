@@ -2,5 +2,5 @@ package oop_133486_Tjho_Rionaldinko.week08
 
 class City(val name: String)
 class Address(val city: City?)
-class DeliveryDetails(val Address: Address?)
+class DeliveryDetails(val address: Address?)
 class Order(val deliveryDetails: DeliveryDetails?, val totalPrice: Int?)
