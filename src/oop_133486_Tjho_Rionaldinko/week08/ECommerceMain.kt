@@ -22,3 +22,4 @@ fun main() {
         }
     }
 }
+//hasil run : Laptop (Warranty 24) T-Shirt (Size XL) Mouse (Warranty 12) Warning: Unexpected error -> null cannot be cast to non-null type kotlin.String
