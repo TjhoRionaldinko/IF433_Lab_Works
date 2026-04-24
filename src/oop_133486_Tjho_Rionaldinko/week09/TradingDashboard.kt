@@ -43,3 +43,14 @@ fun main() {
     println("\nLoss")
     worstPerformersString.forEach { println(it) }
 }
+// hasil run
+//=== CRYPTO TRADING DASHBOARD ===
+//
+//Profit
+//WIN [BTCUSDT - LONG]: +15.5% ROE (Lev: 20x)
+//WIN [ETHUSDT - LONG]: +8.3% ROE (Lev: 25x)
+//WIN [ADAUSDT - SHORT]: +6.7% ROE (Lev: 8x)
+//
+//Loss
+//LOSS [BTCUSDT - SHORT]: --12.0% ROE (Lev: 15x)
+//LOSS [ETHUSDT - SHORT]: --5.2% ROE (Lev: 10x)
