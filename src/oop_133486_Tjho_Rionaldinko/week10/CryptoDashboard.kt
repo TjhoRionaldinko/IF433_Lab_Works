@@ -15,3 +15,11 @@ fun main() {
     txRepo.add(Transaction("A2", 2.0))
     txRepo.add(Transaction("A3", 3.0))
 }
+
+// Hasil :
+//Coin: BTC
+//Balance: 10000.0
+//Coin: ETH
+//Balance: 20000.0
+//Coin: USDT
+//Balance: 30000.0
